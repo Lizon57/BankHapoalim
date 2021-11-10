@@ -1,0 +1,36 @@
+header {
+  background-color: #0c2b4d;
+  color: #eee;
+  padding: 1rem;
+  margin-block-end: 1rem;
+
+  .brand {
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    &:after {
+      content: ".";
+      color: #4290e3;
+    }
+  }
+
+  .greet {
+    margin-inline-end: 1rem;
+  }
+
+  .logout {
+    cursor: pointer;
+    font-size: small;
+    color: #4290e3;
+
+    &::before {
+      content: "(";
+    }
+
+    &::after {
+      content: ")";
+    }
+  }
+}

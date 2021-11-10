@@ -1,0 +1,2 @@
+<comment-preview *ngFor="let comment of comments" [comment]="comment" [loggedInUser]="loggedInUser"
+  (setNewCommentParentId)="onSetNewCommentParentId($event)"></comment-preview>

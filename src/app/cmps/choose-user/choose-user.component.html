@@ -1,0 +1,7 @@
+<div>
+  <label>User</label>
+  <select [(ngModel)]="chosenUser">
+    <option *ngFor="let user of users" [ngValue]="user">{{user.displayName}}</option>
+  </select>
+  <button (click)="consoleMe()">Login!</button>
+</div>

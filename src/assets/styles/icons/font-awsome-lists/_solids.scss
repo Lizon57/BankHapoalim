@@ -1,0 +1,11 @@
+@import "../../setups/mixins";
+
+// List of font-awsome icons using fas (solid) family
+.icn {
+  color: currentColor;
+
+  &-hamburger {
+    @extend .icn;
+    @include fas;
+  }
+}

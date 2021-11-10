@@ -1,0 +1,85 @@
+@import "../../../assets/styles/setups/mixins";
+@import "../../../assets/styles/setups/vars";
+
+.comment-container {
+  position: relative;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 5px;
+  margin: 20px 1rem 0;
+
+  @include for-mobile-layout {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @include for-normal-layout {
+    align-items: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -0.5rem;
+      height: 100%;
+      border-inline-start: 1px solid #2196f3;
+    }
+  }
+
+  .comment-details {
+    @include for-normal-layout {
+      align-items: center;
+    }
+
+    img {
+      border-radius: 50%;
+      margin-inline-end: 1rem;
+      width: 60px;
+      height: 60px;
+      object-fit: fill;
+    }
+
+    .comment-owner {
+      font-size: small;
+      margin-inline-end: 1rem;
+
+      .name {
+        cursor: pointer;
+        color: purple;
+        font-family: monospace;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .comment-txt {
+    flex-grow: 1;
+    margin-inline-end: 1rem;
+
+    textarea {
+      outline: none;
+      width: 100%;
+      height: 3em;
+      resize: none;
+    }
+  }
+
+  .comment-actions {
+    gap: 10px;
+
+    button {
+      cursor: pointer;
+      border: 0;
+      border-radius: 5px;
+      background-color: #2196f3;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 0.5em 1em;
+    }
+  }
+}
+
+.related-comment-container {
+  margin-inline-start: 1rem;
+}

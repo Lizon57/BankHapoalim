@@ -1,0 +1,23 @@
+<article *ngIf="comment && !comment.deletedAt" class="comment-container flex"
+  (click)="onSetNewCommentParentId()">
+  <div class="comment-details flex">
+    <img src="../../../assets/imgs/users-profile/{{comment.ownerId}}.jpg" />
+    <div class="comment-owner flex column">
+      <span class="name">{{commentOwner}}</span>
+      <span>{{comment.createdAt|timeDisplay}}</span>
+    </div>
+  </div>
+  <div class="comment-txt" [attr.contenteditable]="isEditing">
+    <span *ngIf="!isEditing">{{comment.txt}}</span>
+    <textarea *ngIf="isEditing" [(ngModel)]="commentCopy.txt">{{comment.txt}}</textarea>
+  </div>
+  <div class="comment-actions flex" *ngIf="loggedInUser.id === comment.ownerId">
+    <button (click)="saveOrEditComment()">{{isEditing? 'Save' : 'Edit'}}</button>
+    <button (click)="onRemoveComment()">Delete</button>
+  </div>
+</article>
+
+
+<div *ngFor="let comment of relatedComments" class="related-comment-container">
+  <comment-preview [comment]="comment" [loggedInUser]="loggedInUser"></comment-preview>
+</div>

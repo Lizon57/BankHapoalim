@@ -1,0 +1,13 @@
+div {
+  display: flex;
+  justify-content: center;
+
+  label::after {
+    content: ":";
+    margin-inline-end: 0.5rem;
+  }
+
+  select {
+    margin-inline-end: 0.5rem;
+  }
+}

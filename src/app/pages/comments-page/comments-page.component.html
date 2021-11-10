@@ -1,0 +1,5 @@
+<comment-list [comments]="comments$|async" [loggedInUser]="loggedInUser"
+  (setNewCommentParentId)="onSetNewCommentParentId($event)"></comment-list>
+
+<add-comment [loggedInUser]="loggedInUser" [parentId]="currAddCommentParentId" [outsideParentId]="newCommentParentId">
+</add-comment>
