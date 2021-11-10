@@ -1,10 +1,10 @@
 <div *ngIf="loggedInUser.id" class="add-comment-container flex">
   <img src="../../../assets/imgs/users-profile/{{loggedInUser.id}}.jpg" />
   <div class="comment-container flex column space-between">
-    <div>
+    <div class="replying-to-container">
       <span>Replying to:</span>
       <span *ngIf="fixedParentId!==-555" class="parent-num-container"> {{fixedParentId ? fixedParentId : 'root'}}</span>
-      <span *ngIf="fixedParentId" class="clear" (click)="clearParentId()">Clear</span>
+      <span *ngIf="fixedParentId" class="clear" (click)="clearParentId()">Root only</span>
     </div>
     <textarea placeholder="Please add your comment here" [(ngModel)]="comment.txt"></textarea>
   </div>

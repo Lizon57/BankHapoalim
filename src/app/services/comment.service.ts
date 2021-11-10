@@ -36,7 +36,8 @@ export class CommentService {
     if (relatedComments.length) relatedComments.forEach(comment => this.remove(comment.id))
     const commentIdx = this._getCommentIdx(id)
     comments[commentIdx].deletedAt = new Date().toISOString()
-    this._comments$.next(comments)
+    this.query()
+    // this._comments$.next(comments)
   }
 
   getRelatedComments(commentId: number) {
@@ -53,7 +54,7 @@ export class CommentService {
     const comments = _commentDb
     comment.id = this._getNewId()
     _commentDb.push(comment)
-    this._comments$.next(comments)
+    this.query()
     return of(comment)
   }
 

@@ -10,25 +10,3 @@
     @content;
   }
 }
-
-// Mixin for removing hover efects on iphone screen
-@mixin hover-supported {
-  @media not all and (pointer: coarse) {
-    &:hover {
-      @content;
-    }
-  }
-}
-
-// Mixins for icons
-@mixin fab {
-  font-family: fab;
-}
-
-@mixin fas {
-  font-family: fas;
-}
-
-@mixin far {
-  font-family: far;
-}

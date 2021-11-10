@@ -30,6 +30,11 @@
     flex-grow: 1;
     margin-inline-end: 1rem;
 
+    .replying-to-container{
+      font-size: small;
+      font-family: sans-serif;
+    }
+
     textarea {
       outline: none;
       width: 100%;

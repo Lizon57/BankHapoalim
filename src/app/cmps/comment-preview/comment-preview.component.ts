@@ -32,8 +32,8 @@ export class CommentPreviewComponent implements OnInit {
     this.commentService.remove(this.commentCopy.id)
   }
 
-  onSetNewCommentParentId() {
-    this.setNewCommentParentId.emit(this.comment.id)
+  onSetNewCommentParentId(commentId: number) {
+    this.setNewCommentParentId.emit(commentId)
   }
 
   async ngOnInit(): Promise<any> {
@@ -41,6 +41,11 @@ export class CommentPreviewComponent implements OnInit {
     this.relatedComments = this.commentService.getRelatedComments(this.commentCopy.id)
 
     await this.userService.getById(this.comment.ownerId).toPromise()
-    .then(user => this.commentOwner = user!.displayName)
+      .then(user => this.commentOwner = user!.displayName)
+  }
+
+  ngOnChanges() {
   }
 }
+
+

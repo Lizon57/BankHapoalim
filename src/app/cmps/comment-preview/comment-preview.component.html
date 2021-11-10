@@ -1,5 +1,5 @@
 <article *ngIf="comment && !comment.deletedAt" class="comment-container flex"
-  (click)="onSetNewCommentParentId()">
+  (click)="onSetNewCommentParentId(comment.id)">
   <div class="comment-details flex">
     <img src="../../../assets/imgs/users-profile/{{comment.ownerId}}.jpg" />
     <div class="comment-owner flex column">
@@ -19,5 +19,7 @@
 
 
 <div *ngFor="let comment of relatedComments" class="related-comment-container">
-  <comment-preview [comment]="comment" [loggedInUser]="loggedInUser"></comment-preview>
+  <comment-preview [comment]="comment" [loggedInUser]="loggedInUser"
+    (click)="onSetNewCommentParentId(comment.id)">
+  </comment-preview>
 </div>
